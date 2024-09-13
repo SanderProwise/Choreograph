@@ -47,12 +47,12 @@ public:
   {}
 
   /// Constructor variant to support Sequence::then<> syntax.
-  Hold( Time duration, const T &start_value, const T &end_value ):
+  Hold( Time duration, const T &, const T &end_value ):
   Phrase<T>( duration ),
   _value( end_value )
   {}
 
-  T getValue( Time atTime ) const override
+  T getValue( Time ) const override
   {
     return _value;
   }

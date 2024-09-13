@@ -142,7 +142,7 @@ template<typename T>
 class SquashPhrase : public Phrase<T>
 {
 public:
-  SquashPhrase( const PhraseRef<T> &source, Time duration ):
+  SquashPhrase( const PhraseRef<T> &, Time duration ):
     Phrase<T>( duration ),
     _source_duration( _source->getDuration() ),
     _new_duration( duration )

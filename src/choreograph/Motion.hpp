@@ -124,9 +124,9 @@ public:
   void sliceSequence( Time from, Time to );
 
 private:
-  SequenceT       _source;
-  Output<T>       *_output = nullptr;
   T               *_target = nullptr;
+  Output<T>       *_output = nullptr;
+  SequenceT       _source;
 
   Callback        _finish_fn;
   Callback        _start_fn;
@@ -169,11 +169,11 @@ void Motion<T>::update()
     if( points.first != points.second )
     {
       // We just crossed into the second inflection point
-      auto top = std::max( points.first, points.second );
-      auto bottom = std::min( points.first, points.second );
+      int top = std::max( points.first, points.second );
+      int bottom = std::min( points.first, points.second );
       for( const auto &fn : _inflection_callbacks )
       {
-        auto inflection = fn.first;
+        int inflection = fn.first;
         if( inflection > bottom && inflection <= top ) {
           fn.second();
         }

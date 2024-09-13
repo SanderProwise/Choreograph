@@ -172,8 +172,8 @@ public:
 protected:
   /// Override to handle additional time setting as needed.
   /// Used by MotionGroup to propagate setTime calls to timeline.
-  virtual void customSetTime( Time time ) {}
-  virtual void customSetPlaybackSpeed( Time time ) {}
+  virtual void customSetTime( Time ) {}
+  virtual void customSetPlaybackSpeed( Time ) {}
 private:
   /// True if this motion should be removed from Timeline on finish.
   bool       _remove_on_finish = true;
