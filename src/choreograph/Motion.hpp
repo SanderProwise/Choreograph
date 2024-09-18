@@ -169,8 +169,8 @@ void Motion<T>::update()
     if( points.first != points.second )
     {
       // We just crossed into the second inflection point
-      int top = std::max( points.first, points.second );
-      int bottom = std::min( points.first, points.second );
+      int top = (int)std::max( points.first, points.second );
+      int bottom = (int)std::min( points.first, points.second );
       for( const auto &fn : _inflection_callbacks )
       {
         int inflection = fn.first;
