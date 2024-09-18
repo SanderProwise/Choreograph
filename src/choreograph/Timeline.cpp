@@ -27,6 +27,7 @@
 
 #include "Timeline.h"
 #include "detail/VectorManipulation.hpp"
+#include <iterator>
 
 using namespace choreograph;
 
@@ -131,7 +132,7 @@ Time Timeline::getDuration() const
 void Timeline::processQueue()
 {
   using namespace std;
-  std::copy( make_move_iterator( _queue.begin() ), make_move_iterator( _queue.end() ), back_inserter( _items ) );
+  std::copy( make_move_iterator( _queue.begin() ), make_move_iterator( _queue.end() ), std::back_inserter( _items ) );
   _queue.clear();
 }
 
